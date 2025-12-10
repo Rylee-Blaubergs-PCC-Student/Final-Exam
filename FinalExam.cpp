@@ -42,7 +42,7 @@ void welcome();
 void results(int totalMiles, int goal, int milesOverUnder);   
 void goodBye();   
 void getInput(int &goal);
-int readMiles(int miles, int count, int totalMiles);
+int readMiles(int miles, int i, int totalMiles);
 int readInt();
 
 
@@ -55,19 +55,14 @@ int goal = 0, miles = 0;
 // Declare output values
 int totalMiles = 0, milesOverUnder = 0;
 
-// hidden values
-int count = 0;
-
-
 welcome();
 
 getInput(goal);
 if (goal < 0) {
   cout << "No miles were tracked this week." << endl;
 } else if (goal > 0) {
-    while (count != 8) {
-   count++;
-   totalMiles = readMiles(miles, count, totalMiles);     
+    for (int i = 1; i <= 7; i++) {
+   totalMiles = readMiles(miles, i, totalMiles);     
 }
 }
 
@@ -103,8 +98,8 @@ int readInt() {
   return tempVar;
 }
 
-int readMiles(int miles, int count, int totalMiles) {
-switch(count) {
+int readMiles(int miles, int i, int totalMiles) {
+switch(i) {
    case 1:
    cout << "How many miles did you ride on Sunday? ";
    miles = readInt();
