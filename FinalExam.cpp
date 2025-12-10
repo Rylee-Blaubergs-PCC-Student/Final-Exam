@@ -237,7 +237,66 @@ D. LOGIC and ALGORITHMS
 
 
 SAMPLE RUNS:
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 50
+How many miles did you ride on Sunday? -9
+Miles must be 0 or greater!
+How many miles did you ride on Sunday? -3
+Miles must be 0 or greater!
+How many miles did you ride on Sunday? 0
+How many miles did you ride on Monday? 10
+How many miles did you ride on Tuesday? 10
+How many miles did you ride on Wednesday? 10
+How many miles did you ride on Thursday? 10
+How many miles did you ride on Friday? 10
+How many miles did you ride on Saturday? 0
+You rode 50 miles this week.
+Good job! You met your goal!
+Keep riding!
 
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 100
+How many miles did you ride on Sunday? 10
+How many miles did you ride on Monday? 10
+How many miles did you ride on Tuesday? 10
+How many miles did you ride on Wednesday? 10
+How many miles did you ride on Thursday? 10
+How many miles did you ride on Friday? 10
+How many miles did you ride on Saturday? 10
+You rode 70 miles this week.
+Uh oh! You missed your goal by 30 miles!
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 50
+How many miles did you ride on Sunday? 10
+How many miles did you ride on Monday? 10
+How many miles did you ride on Tuesday? 10
+How many miles did you ride on Wednesday? 10
+How many miles did you ride on Thursday? 10
+How many miles did you ride on Friday? 10
+How many miles did you ride on Saturday? 10
+You rode 70 miles this week.
+Great job! You exceeded your goal by 20 miles!
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 0
+No miles were tracked this week.
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? -10
+No miles were tracked this week.
+Keep riding!
 
 
 
