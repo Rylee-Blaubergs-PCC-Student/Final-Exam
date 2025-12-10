@@ -61,6 +61,9 @@ int count = 0;
 welcome();
 
 goal = readGoal(goal);
+if (goal > 0) {
+while (count != 8) {
+ count++;
 switch(count) {
    case 1:
       cout << "Enter miles ridden for Sunday? ";
@@ -101,12 +104,17 @@ switch(count) {
       break;         
 }
 }
+}
 
+
+cout << totalMiles << endl;
 
 
 goodBye();
 
-   return 0;
+   
+//end main
+return 0;
 }
 
 void welcome() {
