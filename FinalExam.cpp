@@ -221,21 +221,167 @@ return totalMiles + miles;
 
 // ------------- DESIGN -------------
 /* 
-Program Name: 
+Program Name: Miles Tracker
 
-Program Description: 
+Program Description: tracks miles ridden over a week and compares it to a user-defined goal.
 
 Design:
 A. INPUT
-
+goal as an integer
+miles as an integer for each day of the week (7 days)
 
 B. OUTPUT
-
+totalMiles as an integer
+milesOverUnder as an integer
 
 C. CALCULATIONS
-
+totalMiles = sum of miles ridden each day
+milesOverUnder = absolute difference between totalMiles and goal
 
 D. LOGIC and ALGORITHMS
+create all function prototypes
+start main function
+declare input values
+declare output values
+Function int main start
+call welcome function
+call getInput(goal) function
+if goal <= 0
+   output "No miles were tracked this week."
+   call goodBye() function
+   end program
+else if goal > 0
+   for i from 1 to 7
+      call readMiles(miles, i, totalMiles) function
+close for
+close if goal
+call results(totalMiles, goal, milesOverUnder) function
+call goodBye() function
+end program
+end main function
+
+create void welcome() function
+   output welcome message
+end function
+
+create void goodBye() function
+   output goodbye message
+end function
+
+create int readInt() function
+   declare tempVar as integer
+   read input into tempVar
+   while input is invalid
+      output "Invalid input! Please try again!!"
+      clear input stream
+      ignore rest of line
+      read input into tempVar
+   close while
+   ignore rest of line
+   return tempVar
+end function
+
+create int readMiles(int miles, int i, int totalMiles) function
+   switch i
+      case 1:
+         prompt for Sunday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Sunday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      case 2:
+         prompt for Monday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Monday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      case 3:
+         prompt for Tuesday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Tuesday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      case 4:
+         prompt for Wednesday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Wednesday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      case 5:
+         prompt for Thursday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Thursday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      case 6:
+         prompt for Friday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Friday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      case 7:
+         prompt for Saturday miles
+         read miles using readInt()
+         while miles < 0
+            output "Miles must be 0 or greater!"
+            prompt for Saturday miles
+            read miles using readInt()
+         close while
+         set totalMiles = calcTotal(totalMiles, miles)
+         break
+      default
+         break  
+   close switch
+   return totalMiles
+end function
+
+create void results(int totalMiles, int goal, int milesOverUnder) function
+   output totalMiles ridden this week
+   if totalMiles == goal and goal != 0
+      output "Good job! You met your goal!"
+   close if
+   if totalMiles > goal
+      set milesOverUnder = totalMiles - goal
+      output "Great job! You exceeded your goal by " + milesOverUnder + " miles!"
+   close if
+   if totalMiles < goal
+      set milesOverUnder = goal - totalMiles
+      output "Uh oh! You missed your goal by " + milesOverUnder + " miles!"
+   close if
+end function
+
+create void getInput(int &goal) function
+   prompt for weekly goal
+   read goal using readInt()
+end function
+
+create int calcTotal(int totalMiles, int miles) function
+   return totalMiles + miles
+end function
 
 
 SAMPLE RUNS:
