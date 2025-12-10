@@ -69,8 +69,7 @@ if (goal <= 0) {
 }
 }
 
-
-
+// check goal and show results
 results(totalMiles, goal, milesOverUnder);
 goodBye();
 
@@ -445,8 +444,5 @@ Welcome to my Miles Tracker program.
 How many miles do you want to ride this week? -10
 No miles were tracked this week.
 Keep riding!
-
-
-
 
 */
