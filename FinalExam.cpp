@@ -59,8 +59,10 @@ int totalMiles = 0, milesOverUnder = 0;
 welcome();
 
 getInput(goal);
-if (goal < 0) {
+if (goal <= 0) {
   cout << "No miles were tracked this week." << endl;
+  goodBye();
+  return 0;
 } else if (goal > 0) {
     for (int i = 1; i <= 7; i++) {
    totalMiles = readMiles(miles, i, totalMiles);     
@@ -182,7 +184,7 @@ void results(int totalMiles, int goal, int milesOverUnder) {
 cout << "You rode " << totalMiles << " miles this week." << endl;
 
 // check if you met your goal
-if (totalMiles == goal) {
+if (totalMiles == goal && goal != 0) {
     cout << "Good job! You met your goal!" << endl;
     }
     
