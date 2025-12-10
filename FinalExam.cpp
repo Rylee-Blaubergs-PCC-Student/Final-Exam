@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
 int goal = 0, miles = 0;
 
 // Declare output values
-int totalMiles = 0, milesOverUnder = 0;
+int totalMiles = 0;
 
 // hidden values
 int count = 0;
@@ -65,9 +65,14 @@ getInput(goal);
 if (goal < 0) {
   cout << "No miles were tracked this week." << endl;
 } else if (goal > 0) {
+    while (count != 8) {
+   count++;
    totalMiles = readMiles(miles, count, totalMiles);
+   cout << miles << endl;
+   cout << count << endl;     
+   
 }
-
+}
 
 cout << totalMiles << endl;
 
@@ -102,13 +107,11 @@ int readInt() {
 }
 
 int readMiles(int miles, int count, int totalMiles) {
-  while (count != 8) {
- count++;
 switch(count) {
    case 1:
-      cout << "How many miles did you ride on Sunday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
+   cout << "How many miles did you ride on Sunday? ";
+   miles = readInt();
+   totalMiles = totalMiles + miles;
       break;
    case 2:
       cout << "How many miles did you ride on Monday? ";
@@ -142,7 +145,6 @@ switch(count) {
       break;
    default:
       break;         
-}
 }
 return totalMiles;
 }
