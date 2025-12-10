@@ -44,6 +44,7 @@ void goodBye();
 void getInput(int &goal);
 int readMiles(int miles, int i, int totalMiles);
 int readInt();
+int calcTotal(int totalMiles, int miles);
 
 
 // Main function
@@ -66,7 +67,7 @@ if (goal < 0) {
 }
 }
 
-cout << totalMiles << endl;
+
 
 results(totalMiles, goal, milesOverUnder);
 goodBye();
@@ -108,7 +109,7 @@ switch(i) {
        cout << "How many miles did you ride on Sunday? ";
        miles = readInt();
    }
-   totalMiles = totalMiles + miles;
+    totalMiles = calcTotal(totalMiles, miles);
       break;
    case 2:
       cout << "How many miles did you ride on Monday? ";
@@ -118,7 +119,7 @@ switch(i) {
        cout << "How many miles did you ride on Monday? ";
        miles = readInt();
    }
-      totalMiles = totalMiles + miles;
+      totalMiles = calcTotal(totalMiles, miles);
       break;
    case 3:
       cout << "How many miles did you ride on Tuesday? ";
@@ -128,7 +129,7 @@ switch(i) {
        cout << "How many miles did you ride on Tuesday? ";
        miles = readInt();
    }
-      totalMiles = totalMiles + miles;
+      totalMiles = calcTotal(totalMiles, miles);
       break;
    case 4:
       cout << "How many miles did you ride on Wednesday? ";
@@ -138,7 +139,7 @@ switch(i) {
        cout << "How many miles did you ride on Wednesday? ";
        miles = readInt();
    }
-      totalMiles = totalMiles + miles;
+      totalMiles = calcTotal(totalMiles, miles);
       break;
    case 5:
       cout << "How many miles did you ride on Thursday? ";
@@ -148,7 +149,7 @@ switch(i) {
        cout << "How many miles did you ride on Thursday? ";
        miles = readInt();
    }
-      totalMiles = totalMiles + miles;
+      totalMiles = calcTotal(totalMiles, miles);
       break;
    case 6:
       cout << "How many miles did you ride on Friday? ";
@@ -158,7 +159,7 @@ switch(i) {
        cout << "How many miles did you ride on Friday? ";
        miles = readInt();
    }
-      totalMiles = totalMiles + miles;
+      totalMiles = calcTotal(totalMiles, miles);
       break;
    case 7:
       cout << "How many miles did you ride on Saturday? ";
@@ -168,10 +169,10 @@ switch(i) {
        cout << "How many miles did you ride on Saturday? ";
        miles = readInt();
    }
-      totalMiles = totalMiles + miles;
+      totalMiles = calcTotal(totalMiles, miles);
       break;
    default:
-      break;         
+      break;  
 }
 return totalMiles;
 }
@@ -204,6 +205,10 @@ void getInput(int &goal) {
 cout << "How many miles do you want to ride this week? ";
 // Read goal input
 goal = readInt();
+}
+
+int calcTotal(int totalMiles, int miles) {
+return totalMiles + miles;
 }
 
 
