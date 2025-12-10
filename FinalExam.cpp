@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
 int goal = 0, miles = 0;
 
 // Declare output values
-int totalMiles = 0;
+int totalMiles = 0, milesOverUnder = 0;
 
 // hidden values
 int count = 0;
@@ -67,10 +67,7 @@ if (goal < 0) {
 } else if (goal > 0) {
     while (count != 8) {
    count++;
-   totalMiles = readMiles(miles, count, totalMiles);
-   cout << miles << endl;
-   cout << count << endl;     
-   
+   totalMiles = readMiles(miles, count, totalMiles);     
 }
 }
 
@@ -111,36 +108,71 @@ switch(count) {
    case 1:
    cout << "How many miles did you ride on Sunday? ";
    miles = readInt();
+   while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Sunday? ";
+       miles = readInt();
+   }
    totalMiles = totalMiles + miles;
       break;
    case 2:
       cout << "How many miles did you ride on Monday? ";
       miles = readInt();
+      while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Monday? ";
+       miles = readInt();
+   }
       totalMiles = totalMiles + miles;
       break;
    case 3:
       cout << "How many miles did you ride on Tuesday? ";
       miles = readInt();
+      while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Tuesday? ";
+       miles = readInt();
+   }
       totalMiles = totalMiles + miles;
       break;
    case 4:
       cout << "How many miles did you ride on Wednesday? ";
       miles = readInt();
+      while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Wednesday? ";
+       miles = readInt();
+   }
       totalMiles = totalMiles + miles;
       break;
    case 5:
       cout << "How many miles did you ride on Thursday? ";
       miles = readInt();
+      while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Thursday? ";
+       miles = readInt();
+   }
       totalMiles = totalMiles + miles;
       break;
    case 6:
       cout << "How many miles did you ride on Friday? ";
       miles = readInt();
+      while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Friday? ";
+       miles = readInt();
+   }
       totalMiles = totalMiles + miles;
       break;
    case 7:
       cout << "How many miles did you ride on Saturday? ";
       miles = readInt();
+      while (miles < 0) {
+       cout << "Miles must be 0 or greater!" << endl;
+       cout << "How many miles did you ride on Saturday? ";
+       miles = readInt();
+   }
       totalMiles = totalMiles + miles;
       break;
    default:
@@ -149,8 +181,26 @@ switch(count) {
 return totalMiles;
 }
 
-void results() {
+void results(int totalMiles, int goal, int milesOverUnder) {
+// show total miles rode
+cout << "You rode " << totalMiles << " miles this week." << endl;
 
+// check if you met your goal
+if (totalMiles == goal) {
+    cout << "Good job! You met your goal!" << endl;
+    }
+    
+// check if you excceded your goal
+if (totalMiles > goal) {
+ milesOverUnder = totalMiles - goal;
+ cout << "Great job! You exceeded your goal by " << milesOverUnder << " miles!" << endl;
+}
+
+// check if you missed your goal
+if (totalMiles < goal) {
+ milesOverUnder = goal - totalMiles;
+ cout << "Uh oh! You missed your goal by " << milesOverUnder << " miles!" << endl;
+}
 
 }
 
