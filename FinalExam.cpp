@@ -61,7 +61,46 @@ int count = 0;
 welcome();
 
 goal = readGoal(goal);
-
+switch(count) {
+   case 1:
+      cout << "Enter miles ridden for Sunday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 2:
+      cout << "Enter miles ridden for Monday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 3:
+      cout << "Enter miles ridden for Tuesday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 4:
+      cout << "Enter miles ridden for Wednesday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 5:
+      cout << "Enter miles ridden for Thursday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 6:
+      cout << "Enter miles ridden for Friday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 7:
+      cout << "Enter miles ridden for Saturday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   default:
+      break;         
+}
+}
 
 
 
@@ -74,18 +113,21 @@ void welcome() {
 cout << "Welcome to my Miles Tracker program." << endl;
 }
 
+
 void results() {
 
 
 }
 
+
 void goodBye() {
 cout << "Keep Riding!" << endl;
 }
 
+
 int readGoal(int goal) {
 // Prompt user for goal
-cout << "How many miles do you want to ride this week?";
+cout << "How many miles do you want to ride this week? ";
 // Read goal input
 goal = readInt();
 
