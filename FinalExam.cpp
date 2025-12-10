@@ -36,6 +36,15 @@
 #include <iomanip>
 using namespace std;
 
+
+// fuction prototypes
+void welcome();
+void results();   
+void goodBye();   
+int readGoal(int goal);
+int readInt();
+
+
 // Main function
 // https://en.cppreference.com/w/cpp/language/main_function.html
 int main(int argc, char* argv[]) {
@@ -51,12 +60,12 @@ int count = 0;
 
 welcome();
 
-goal = readGoal();
+goal = readGoal(goal);
 
 
 
 
-goodbye();
+goodBye();
 
    return 0;
 }
@@ -71,14 +80,14 @@ void results() {
 }
 
 void goodBye() {
-cout << "Keep Riding" << endl;
+cout << "Keep Riding!" << endl;
 }
 
 int readGoal(int goal) {
 // Prompt user for goal
 cout << "How many miles do you want to ride this week?";
 // Read goal input
-int goal = readInt();
+goal = readInt();
 
 if (goal < 0) {
   cout << "No miles were tracked this week." << endl;
