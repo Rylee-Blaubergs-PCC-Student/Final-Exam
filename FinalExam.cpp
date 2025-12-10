@@ -41,7 +41,8 @@ using namespace std;
 void welcome();
 void results();   
 void goodBye();   
-int readGoal(int goal);
+void getInput(int &goal);
+int readMiles(int miles, int count, int totalMiles);
 int readInt();
 
 
@@ -60,50 +61,11 @@ int count = 0;
 
 welcome();
 
-goal = readGoal(goal);
-if (goal > 0) {
-while (count != 8) {
- count++;
-switch(count) {
-   case 1:
-      cout << "Enter miles ridden for Sunday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   case 2:
-      cout << "Enter miles ridden for Monday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   case 3:
-      cout << "Enter miles ridden for Tuesday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   case 4:
-      cout << "Enter miles ridden for Wednesday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   case 5:
-      cout << "Enter miles ridden for Thursday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   case 6:
-      cout << "Enter miles ridden for Friday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   case 7:
-      cout << "Enter miles ridden for Saturday? ";
-      miles = readInt();
-      totalMiles = totalMiles + miles;
-      break;
-   default:
-      break;         
-}
-}
+getInput(goal);
+if (goal < 0) {
+  cout << "No miles were tracked this week." << endl;
+} else if (goal > 0) {
+   totalMiles = readMiles(miles, count, totalMiles);
 }
 
 
@@ -121,29 +83,8 @@ void welcome() {
 cout << "Welcome to my Miles Tracker program." << endl;
 }
 
-
-void results() {
-
-
-}
-
-
 void goodBye() {
 cout << "Keep Riding!" << endl;
-}
-
-
-int readGoal(int goal) {
-// Prompt user for goal
-cout << "How many miles do you want to ride this week? ";
-// Read goal input
-goal = readInt();
-
-if (goal < 0) {
-  cout << "No miles were tracked this week." << endl;
-}
-
-return goal;
 }
 
 int readInt() {
@@ -159,6 +100,67 @@ int readInt() {
   cin.ignore(10, '\n');
   return tempVar;
 }
+
+int readMiles(int miles, int count, int totalMiles) {
+  while (count != 8) {
+ count++;
+switch(count) {
+   case 1:
+      cout << "How many miles did you ride on Sunday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 2:
+      cout << "How many miles did you ride on Monday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 3:
+      cout << "How many miles did you ride on Tuesday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 4:
+      cout << "How many miles did you ride on Wednesday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 5:
+      cout << "How many miles did you ride on Thursday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 6:
+      cout << "How many miles did you ride on Friday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   case 7:
+      cout << "How many miles did you ride on Saturday? ";
+      miles = readInt();
+      totalMiles = totalMiles + miles;
+      break;
+   default:
+      break;         
+}
+}
+return totalMiles;
+}
+
+void results() {
+
+
+}
+
+void getInput(int &goal) {
+// Prompt user for goal
+cout << "How many miles do you want to ride this week? ";
+// Read goal input
+goal = readInt();
+}
+
+
+
 
 // Function implementations (if any)
 
