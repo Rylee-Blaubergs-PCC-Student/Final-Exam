@@ -39,7 +39,7 @@ using namespace std;
 
 // fuction prototypes
 void welcome();
-void results();   
+void results(int totalMiles, int goal, int milesOverUnder);   
 void goodBye();   
 void getInput(int &goal);
 int readMiles(int miles, int count, int totalMiles);
@@ -73,7 +73,7 @@ if (goal < 0) {
 
 cout << totalMiles << endl;
 
-
+results(totalMiles, goal, milesOverUnder);
 goodBye();
 
    
